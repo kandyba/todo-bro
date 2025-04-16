@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-gradient-from: #eef2ff;
+  --bg-gradient-to: #dbeafe;
+  --text-primary: #312e81;
+  --text-secondary: #4f46e5;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --border-card: rgba(255, 255, 255, 0.2);
+  --input-border: #c7d2fe;
+  --input-bg: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] {
+  --bg-gradient-from: #1e1b4b;
+  --bg-gradient-to: #1e3a8a;
+  --text-primary: #e0e7ff;
+  --text-secondary: #818cf8;
+  --bg-card: rgba(30, 27, 75, 0.8);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --input-border: #4f46e5;
+  --input-bg: rgba(30, 27, 75, 0.5);
+}
+
+body {
+  @apply transition-colors duration-200;
+  background: linear-gradient(to bottom right, var(--bg-gradient-from), var(--bg-gradient-to));
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-color: var(--border-card);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.priority-high {
+  @apply border-l-4 border-red-500 hover:border-red-600 transition-colors;
+}
+
+.priority-medium {
+  @apply border-l-4 border-yellow-500 hover:border-yellow-600 transition-colors;
+}
+
+.priority-low {
+  @apply border-l-4 border-green-500 hover:border-green-600 transition-colors;
+}
+
+.todo-done {
+  @apply line-through opacity-50;
+}
+
+/* Add smooth transitions */
+button {
+  @apply transition-all duration-200;
+}
+
+input, select {
+  @apply transition-all duration-200;
+}
+
+.todo-item {
+  @apply transition-all duration-200;
+}
+
+/* Tab styles */
+.tab-button.active {
+  @apply font-medium;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-200 rounded-full hover:bg-indigo-300;
+}
+
+.timestamp {
+  @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+.clock-text {
+  color: var(--text-primary);
+}
